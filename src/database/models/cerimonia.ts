@@ -17,10 +17,10 @@ export default function (sequelize) {
         }
       },
       cpf: {
-        type: DataTypes.STRING(12),
+        type: DataTypes.STRING(250),
         allowNull: false,
         validate: {
-          len: [10, 12],
+          // len: [10, 12],
           notEmpty: true,
         }
       },

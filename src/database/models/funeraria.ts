@@ -12,6 +12,31 @@ export default function (sequelize) {
       nomeFuneraria: {
         type: DataTypes.TEXT,
       },
+      empresa: {
+        type: DataTypes.TEXT,
+      },
+      cnpj: {
+        type: DataTypes.TEXT,
+      },
+      telefone: {
+        type: DataTypes.TEXT,
+      },
+      email: {
+        type: DataTypes.TEXT,
+      },
+      responsavel: {
+        type: DataTypes.TEXT,
+      },
+      cep: {
+        type: DataTypes.TEXT,
+      },
+      numero: {
+        type: DataTypes.TEXT,
+      },
+      complemento: {
+        type: DataTypes.TEXT,
+      },
+
       importHash: {
         type: DataTypes.STRING(255),
         allowNull: true,    
