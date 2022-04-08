@@ -5,9 +5,9 @@ import CerimoniaService from '../../services/cerimoniaService';
 
 export default async (req, res, next) => {
   try {
-    new PermissionChecker(req).validateHas(
-      Permissions.values.cerimoniaCreate,
-    );
+    // new PermissionChecker(req).validateHas(
+    //   Permissions.values.cerimoniaCreate,
+    // );
 
     const payload = await new CerimoniaService(req).create(
       req.body.data,
