@@ -5,9 +5,9 @@ import FunerariaService from '../../services/funerariaService';
 
 export default async (req, res, next) => {
   try {
-    new PermissionChecker(req).validateHas(
-      Permissions.values.funerariaCreate,
-    );
+    // new PermissionChecker(req).validateHas(
+    //   Permissions.values.funerariaCreate,
+    // );
 
     const payload = await new FunerariaService(req).create(
       req.body.data,
