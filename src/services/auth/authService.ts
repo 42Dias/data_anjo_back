@@ -11,14 +11,18 @@ import TenantRepository from '../../database/repositories/tenantRepository';
 import { tenantSubdomain } from '../tenantSubdomain';
 import Error401 from '../../errors/Error401';
 import moment from 'moment';
+import { ConfigurationServicePlaceholders } from 'aws-sdk/lib/config_service_placeholders';
 
 const BCRYPT_SALT_ROUNDS = 12;
 
 class AuthService {
 
   static async signup(
+    fullName,
     email,
     password,
+    phone,
+    role,
     invitationToken,
     tenantId,
     options: any = {},
@@ -128,9 +132,12 @@ class AuthService {
 
       const newUser = await UserRepository.createFromAuth(
         {
-          firstName: email.split('@')[0],
+          fullName: fullName,
+          name: fullName,
+          firstName: fullName.split(' ')[0],
           password: hashedPassword,
           email: email,
+          cellphone: phone,
         },
         {
           ...options,
@@ -149,6 +156,7 @@ class AuthService {
           ...options,
           transaction,
         },
+        role,
       );
 
       // Email may have been alreadyverified using the invitation token
@@ -186,8 +194,7 @@ class AuthService {
       await SequelizeRepository.commitTransaction(
         transaction,
       );
-
-      return token;
+      return token;    
     } catch (error) {
       await SequelizeRepository.rollbackTransaction(
         transaction,
@@ -290,6 +297,7 @@ class AuthService {
     invitationToken,
     tenantId,
     options,
+    role?,
   ) {
     if (invitationToken) {
       try {
@@ -311,7 +319,8 @@ class AuthService {
     const isMultiTenantViaSubdomain =
       ['multi', 'multi-with-subdomain'].includes(
         getConfig().TENANT_MODE,
-      ) && tenantId;
+      ) 
+      // && tenantId;
 
     if (isMultiTenantViaSubdomain) {
       await new TenantService({
@@ -346,7 +355,7 @@ class AuthService {
       }).createOrJoinDefault(
         {
           // leave empty to require admin's approval
-          roles: [],
+          roles: [role] || null,
         },
         options.transaction,
       );
@@ -382,6 +391,7 @@ class AuthService {
                   );
 
               if (isTokenManuallyExpired) {
+                console.log("hjsdfnvkjsdvkjs\nbvjsdnvjdcnvjfsanvpojsdnvosdnvojksdanvojksdnv sdapkjvnsdoijnvosdinvoisdanviosdnvsdivnsdoinviosdnvoisdn")
                 reject(new Error401());
                 return;
               }
