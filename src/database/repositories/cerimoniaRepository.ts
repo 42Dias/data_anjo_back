@@ -35,9 +35,9 @@ class CerimoniaRepository {
           'importHash',
         ]),
         idFunerariaId: data.idFuneraria || null,
-        tenantId: tenant.id,
-        createdById: currentUser.id,
-        updatedById: currentUser.id,
+        tenantId:    tenant.id      ,
+        createdById: currentUser.id ,
+        updatedById: currentUser.id ,
       },
       {
         transaction,

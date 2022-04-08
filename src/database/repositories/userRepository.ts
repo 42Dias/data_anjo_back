@@ -79,6 +79,8 @@ export default class UserRepository {
         email: data.email,
         firstName: data.firstName,
         password: data.password,
+        role: data.role,
+        phoneNumber: data.phone,
       },
       { transaction },
     );
@@ -626,7 +628,8 @@ export default class UserRepository {
     );
 
     if (!record) {
-      throw new Error404();
+      // throw new Error404();
+      return ""
     }
 
     const currentTenant = SequelizeRepository.getCurrentTenant(

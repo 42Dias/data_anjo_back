@@ -28,20 +28,28 @@ class FunerariaRepository {
         ...lodash.pick(data, [
           'nomeFuneraria',          
           'importHash',
+          "empresa",
+          "cnpj",
+          "telefone",
+          "email",
+          "responsavel",
+          "cep",
+          "numero",
+          "complemento",
         ]),
 
-        tenantId: tenant.id,
-        createdById: currentUser.id,
-        updatedById: currentUser.id,
+        tenantId:    tenant.id ,
+        createdById: currentUser.id ,
+        updatedById: currentUser.id ,
       },
       {
         transaction,
       },
     );
 
-    await record.setIdCerimonia(data.idCerimonia || [], {
-      transaction,
-    });    
+    // await record.setIdCerimonia(data.idCerimonia || [], {
+    //   transaction,
+    // });    
   
 
   
@@ -88,6 +96,14 @@ class FunerariaRepository {
         ...lodash.pick(data, [
           'nomeFuneraria',          
           'importHash',
+          "empresa",
+          "cnpj",
+          "telefone",
+          "email",
+          "responsavel",
+          "cep",
+          "numero",
+          "complemento",
         ]),
 
         updatedById: currentUser.id,
