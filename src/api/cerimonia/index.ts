@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/cerimonia`,
+    require('./cerimoniaCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/cerimonia/:id`,
+    require('./cerimoniaUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/cerimonia/import`,
+    require('./cerimoniaImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/cerimonia`,
+    require('./cerimoniaDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/cerimonia/autocomplete`,
+    require('./cerimoniaAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/cerimonia`,
+    require('./cerimoniaList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/cerimonia/:id`,
+    require('./cerimoniaFind').default,
+  );
+};

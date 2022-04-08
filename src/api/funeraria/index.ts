@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/funeraria`,
+    require('./funerariaCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/funeraria/:id`,
+    require('./funerariaUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/funeraria/import`,
+    require('./funerariaImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/funeraria`,
+    require('./funerariaDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/funeraria/autocomplete`,
+    require('./funerariaAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/funeraria`,
+    require('./funerariaList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/funeraria/:id`,
+    require('./funerariaFind').default,
+  );
+};
