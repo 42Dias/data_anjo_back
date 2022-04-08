@@ -117,6 +117,7 @@ export default class TenantService {
       // and it's accepted or with empty permissions
       return;
     }
+    
 
     return await TenantUserRepository.create(
       tenant,
