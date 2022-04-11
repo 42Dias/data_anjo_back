@@ -94,6 +94,10 @@ export default function (sequelize) {
       constraints: false,
     });
 
+    models.cerimonia.hasMany(models.cerimoniaData, {
+      constraints: false,
+    });
+
 
     
     models.cerimonia.belongsTo(models.tenant, {
