@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/cerimoniaData`,
+    require('./cerimoniaDataCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/cerimoniaData/:id`,
+    require('./cerimoniaDataUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/cerimoniaData/import`,
+    require('./cerimoniaDataImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/cerimoniaData`,
+    require('./cerimoniaDataDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/cerimoniaData/autocomplete`,
+    require('./cerimoniaDataAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/cerimoniaData`,
+    require('./cerimoniaDataList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/cerimoniaData/:id`,
+    require('./cerimoniaDataFind').default,
+  );
+};
