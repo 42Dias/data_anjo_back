@@ -70,6 +70,7 @@ require('./user').default(routes);
 require('./settings').default(routes);
 require('./funeraria').default(routes);
 require('./cerimonia').default(routes);
+require('./cerimoniaData').default(routes);
 
 // Loads the Tenant if the :tenantId param is passed
 routes.param('tenantId', tenantMiddleware);
