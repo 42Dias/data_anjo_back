@@ -101,9 +101,8 @@ let sslServer;
 
 
 sslServer = https.createServer({
-  ca:   fs.readFileSync(path.join(__dirname, '../../cert', 'constal.crt'),   'utf8'),
-  key:  fs.readFileSync(path.join(__dirname, '../../cert', 'constal.key'),   'ascii'),
-  cert: fs.readFileSync(path.join(__dirname, '../../cert', 'constal.pem'),   'utf8')
+  key: fs.readFileSync(path.join(__dirname, '../../cert/',  'privada25294.key')),
+  cert: fs.readFileSync(path.join(__dirname, '../../cert/', 'certificado25294.pem'))
 }, app)
 
 
