@@ -9,6 +9,8 @@ import { createRateLimiter } from './apiRateLimiter';
 import { languageMiddleware } from '../middlewares/languageMiddleware';
 import authSocial from './auth/authSocial';
 import setupSwaggerUI from './apiDocumentation';
+import path from 'path';
+
 
 const app = express();
 
@@ -87,5 +89,22 @@ routes.param('tenantId', tenantMiddleware);
 
 // Add the routes to the /api endpoint
 app.use('/api', routes);
+
+
+
+// let https = require('https');
+let https = require('http');
+// let https = require('http');
+const fs = require('fs');
+
+let sslServer;
+
+
+sslServer = https.createServer({
+  ca:   fs.readFileSync(path.join(__dirname, '../../cert', 'constal.crt'),   'utf8'),
+  key:  fs.readFileSync(path.join(__dirname, '../../cert', 'constal.key'),   'ascii'),
+  cert: fs.readFileSync(path.join(__dirname, '../../cert', 'constal.pem'),   'utf8')
+}, app)
+
 
 export default app;
