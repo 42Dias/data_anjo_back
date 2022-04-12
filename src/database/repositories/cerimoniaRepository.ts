@@ -33,6 +33,7 @@ class CerimoniaRepository {
           'telefoneResponsavel',
           'emailResponsavel',          
           'importHash',
+          'isEncerrada',
         ]),
         idFunerariaId: data.idFuneraria || null,
         tenantId:    tenant.id      ,
