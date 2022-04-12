@@ -65,6 +65,10 @@ export default function (sequelize) {
           len: [0, 255],
         },    
       },
+      isEncerrada: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
     },
     {
       indexes: [
