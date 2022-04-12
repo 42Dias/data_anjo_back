@@ -273,6 +273,14 @@ class CerimoniaDataRepository {
         });
       }
 
+      if (filter.cerimoniaId) {
+        whereAnd.push({
+          ['cerimoniaId']: SequelizeFilterUtils.uuid(
+            filter.cerimoniaId,
+          ),
+        });
+      }
+
       if (filter.nomeHomenageado) {
         whereAnd.push(
           SequelizeFilterUtils.ilikeIncludes(
