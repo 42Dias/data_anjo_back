@@ -96,6 +96,8 @@ class CerimoniaRepository {
           'telefoneResponsavel',
           'emailResponsavel',          
           'importHash',
+          'isEncerrada',
+          
         ]),
         idFunerariaId: data.idFuneraria || null,
         updatedById: currentUser.id,
@@ -163,6 +165,10 @@ class CerimoniaRepository {
       {
         model: options.database.funeraria,
         as: 'idFuneraria',
+      },
+      {
+        model: options.database.cerimoniaData,
+        as: 'cerimoniaData',
       },
     ];
 
@@ -293,7 +299,6 @@ class CerimoniaRepository {
           ),
         );
       }
-
       if (filter.dataCerimoniaRange) {
         const [start, end] = filter.dataCerimoniaRange;
 
@@ -348,6 +353,19 @@ class CerimoniaRepository {
         whereAnd.push({
           ['idFunerariaId']: SequelizeFilterUtils.uuid(
             filter.idFuneraria,
+          ),
+        });
+      }
+
+      if (filter.cerimoniaId) {
+        console.log("nbkldfnbdfkbn")
+        console.log("nbkldfnbdfkbn")
+        console.log("nbkldfnbdfkbn")
+        console.log("nbkldfnbdfkbn")
+        console.log("nbkldfnbdfkbn")
+        whereAnd.push({
+          ['cerimoniaId']: SequelizeFilterUtils.uuid(
+            filter.cerimoniaId,
           ),
         });
       }
