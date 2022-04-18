@@ -62,11 +62,11 @@ export default function (sequelize) {
   );
 
   funeraria.associate = (models) => {
-    models.funeraria.belongsToMany(models.cerimonia, {
-      as: 'idCerimonia',
-      constraints: false,
-      through: 'funerariaIdCerimoniaCerimonia',
-    });
+    // models.funeraria.belongsToMany(models.cerimonia, {
+    //   as: 'idCerimonia',
+    //   constraints: false,
+    //   through: 'funerariaIdCerimoniaCerimonia',
+    // });
 
 
     
