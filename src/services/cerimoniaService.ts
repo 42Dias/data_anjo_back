@@ -17,7 +17,7 @@ export default class CerimoniaService {
     );
 
     try {
-      data.idFuneraria = await FunerariaRepository.filterIdInTenant(data.idFuneraria, { ...this.options, transaction });
+      // data.idFuneraria = await FunerariaRepository.filterIdInTenant(data.idFuneraria, { ...this.options, transaction });
 
       const record = await CerimoniaRepository.create(data, {
         ...this.options,
@@ -50,7 +50,7 @@ export default class CerimoniaService {
     );
 
     try {
-      data.idFuneraria = await FunerariaRepository.filterIdInTenant(data.idFuneraria, { ...this.options, transaction });
+      // data.idFuneraria = await FunerariaRepository.filterIdInTenant(data.idFuneraria, { ...this.options, transaction });
 
       const record = await CerimoniaRepository.update(
         id,
