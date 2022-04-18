@@ -29,13 +29,14 @@ class CerimoniaRepository {
           'nomeHomenageado',
           'cpf',
           'dataCerimonia',
-          'responsavel',
+          'responsavelNome',
           'telefoneResponsavel',
           'emailResponsavel',          
           'importHash',
           'isEncerrada',
         ]),
-        idFunerariaId: data.idFuneraria || null,
+        responsavelId: data.responsavelId || null,
+        // idFunerariaId: data.idFuneraria || null,
         tenantId:    tenant.id      ,
         createdById: currentUser.id ,
         updatedById: currentUser.id ,
@@ -93,14 +94,14 @@ class CerimoniaRepository {
           'nomeHomenageado',
           'cpf',
           'dataCerimonia',
-          'responsavel',
+          'responsavelNome',
           'telefoneResponsavel',
           'emailResponsavel',          
           'importHash',
           'isEncerrada',
-          
         ]),
-        idFunerariaId: data.idFuneraria || null,
+        responsavelId: data.responsavelId || null,
+        // idFunerariaId: data.idFuneraria || null,
         updatedById: currentUser.id,
       },
       {
@@ -163,10 +164,10 @@ class CerimoniaRepository {
     );
 
     const include = [
-      {
-        model: options.database.funeraria,
-        as: 'idFuneraria',
-      },
+      // {
+      //   model: options.database.funeraria,
+      //   as: 'idFuneraria',
+      // },
       {
         model: options.database.cerimoniaData,
         as: 'cerimoniaData',
@@ -264,10 +265,10 @@ class CerimoniaRepository {
 
     let whereAnd: Array<any> = [];
     let include = [
-      {
-        model: options.database.funeraria,
-        as: 'idFuneraria',
-      },      
+      // {
+      //   model: options.database.funeraria,
+      //   as: 'idFuneraria',
+      // },      
     ];
 
     whereAnd.push({
