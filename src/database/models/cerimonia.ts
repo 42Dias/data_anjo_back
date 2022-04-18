@@ -37,26 +37,26 @@ export default function (sequelize) {
         },
         allowNull: false,
       },
-      responsavel: {
+      responsavelNome: {
         type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-          notEmpty: true,
-        }
+        // validate: {
+        //   notEmpty: true,
+        // }
       },
       telefoneResponsavel: {
         type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-          notEmpty: true,
-        }
+        // validate: {
+        //   notEmpty: true,
+        // }
       },
       emailResponsavel: {
         type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-          notEmpty: true,
-        }
+        // validate: {
+        //   notEmpty: true,
+        // }
       },
       importHash: {
         type: DataTypes.STRING(255),
@@ -93,10 +93,15 @@ export default function (sequelize) {
   );
 
   cerimonia.associate = (models) => {
-    models.cerimonia.belongsTo(models.funeraria, {
-      as: 'idFuneraria',
-      constraints: false,
+    // models.cerimonia.belongsTo(models.funeraria, {
+    //   as: 'idFuneraria',
+    //   constraints: false,
+    // });
+
+    models.cerimonia.belongsTo(models.user, {
+      as: 'responsavel',
     });
+
 
     models.cerimonia.hasMany(models.cerimoniaData, {
       constraints: false,
