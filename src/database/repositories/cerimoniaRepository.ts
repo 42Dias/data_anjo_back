@@ -360,11 +360,6 @@ class CerimoniaRepository {
       }
 
       if (filter.cerimoniaId) {
-        console.log("nbkldfnbdfkbn")
-        console.log("nbkldfnbdfkbn")
-        console.log("nbkldfnbdfkbn")
-        console.log("nbkldfnbdfkbn")
-        console.log("nbkldfnbdfkbn")
         whereAnd.push({
           ['cerimoniaId']: SequelizeFilterUtils.uuid(
             filter.cerimoniaId,
