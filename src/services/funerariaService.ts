@@ -50,7 +50,7 @@ export default class FunerariaService {
     );
 
     try {
-      data.idCerimonia = await CerimoniaRepository.filterIdsInTenant(data.idCerimonia, { ...this.options, transaction });
+      // data.idCerimonia = await CerimoniaRepository.filterIdsInTenant(data.idCerimonia, { ...this.options, transaction });
 
       const record = await FunerariaRepository.update(
         id,
