@@ -113,9 +113,9 @@ class FunerariaRepository {
       },
     );
 
-    await record.setIdCerimonia(data.idCerimonia || [], {
-      transaction,
-    });
+    // await record.setIdCerimonia(data.idCerimonia || [], {
+    //   transaction,
+    // });
 
 
 
@@ -436,9 +436,9 @@ class FunerariaRepository {
       options,
     );
 
-    output.idCerimonia = await record.getIdCerimonia({
-      transaction,
-    });
+    // output.idCerimonia = await record.getIdCerimonia({
+    //   transaction,
+    // });
 
     return output;
   }
