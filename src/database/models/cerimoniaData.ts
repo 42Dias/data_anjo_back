@@ -19,9 +19,6 @@ export default function (sequelize) {
       email: {
         type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-          notEmpty: true,
-        }
       },
       telefone: {
         type: DataTypes.TEXT,
