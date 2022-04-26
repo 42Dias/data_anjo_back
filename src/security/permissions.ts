@@ -11,7 +11,7 @@ class Permissions {
     return {
       tenantEdit: {
         id: 'tenantEdit',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -20,7 +20,7 @@ class Permissions {
       },
       tenantDestroy: {
         id: 'tenantDestroy',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -29,7 +29,7 @@ class Permissions {
       },
       planEdit: {
         id: 'planEdit',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -38,7 +38,7 @@ class Permissions {
       },
       planRead: {
         id: 'planRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -47,7 +47,7 @@ class Permissions {
       },
       userEdit: {
         id: 'userEdit',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -56,7 +56,7 @@ class Permissions {
       },
       userDestroy: {
         id: 'userDestroy',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -65,7 +65,7 @@ class Permissions {
       },
       userCreate: {
         id: 'userCreate',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -74,7 +74,7 @@ class Permissions {
       },
       userImport: {
         id: 'userImport',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -83,7 +83,7 @@ class Permissions {
       },
       userRead: {
         id: 'userRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -92,7 +92,7 @@ class Permissions {
       },
       userAutocomplete: {
         id: 'userAutocomplete',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [roles.admin, roles.enterprise, roles.custom],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -101,7 +101,7 @@ class Permissions {
       },
       auditLogRead: {
         id: 'auditLogRead',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -110,7 +110,7 @@ class Permissions {
       },
       settingsEdit: {
         id: 'settingsEdit',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [
           plans.free,
           plans.growth,
@@ -123,12 +123,12 @@ class Permissions {
       },
       funerariaImport: {
         id: 'funerariaImport',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       funerariaCreate: {
         id: 'funerariaCreate',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -136,7 +136,7 @@ class Permissions {
       },
       funerariaEdit: {
         id: 'funerariaEdit',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -144,7 +144,7 @@ class Permissions {
       },
       funerariaDestroy: {
         id: 'funerariaDestroy',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -152,23 +152,23 @@ class Permissions {
       },
       funerariaRead: {
         id: 'funerariaRead',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [roles.admin, roles.enterprise, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       funerariaAutocomplete: {
         id: 'funerariaAutocomplete',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [roles.admin, roles.enterprise, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       cerimoniaImport: {
         id: 'cerimoniaImport',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       cerimoniaCreate: {
         id: 'cerimoniaCreate',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -176,7 +176,7 @@ class Permissions {
       },
       cerimoniaEdit: {
         id: 'cerimoniaEdit',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -184,7 +184,7 @@ class Permissions {
       },
       cerimoniaDestroy: {
         id: 'cerimoniaDestroy',
-        allowedRoles: [roles.admin],
+        allowedRoles: [roles.admin, roles.enterprise],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -192,12 +192,12 @@ class Permissions {
       },
       cerimoniaRead: {
         id: 'cerimoniaRead',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [roles.admin, roles.enterprise, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       cerimoniaAutocomplete: {
         id: 'cerimoniaAutocomplete',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [roles.admin, roles.enterprise, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },      
     };
