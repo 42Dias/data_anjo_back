@@ -51,6 +51,13 @@ export default function (sequelize) {
   );
 
   cerimoniaData.associate = (models) => {
+
+    models.cerimoniaData.belongsTo(models.funeraria, {
+      as: 'idFuneraria',
+      constraints: false,
+    });
+
+
     models.cerimoniaData.belongsTo(models.cerimonia, {
       constraints: false,
       as: 'cerimonia'
