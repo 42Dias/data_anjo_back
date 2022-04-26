@@ -35,7 +35,7 @@ class CerimoniaRepository {
           'importHash',
           'isEncerrada',
         ]),
-        responsavelId: data.responsavelId || null,
+        responsavelId: data.responsavelId || currentUser.id,
         // idFunerariaId: data.idFuneraria || null,
         tenantId:    tenant.id      ,
         createdById: currentUser.id ,
