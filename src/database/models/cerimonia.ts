@@ -93,10 +93,10 @@ export default function (sequelize) {
   );
 
   cerimonia.associate = (models) => {
-    // models.cerimonia.belongsTo(models.funeraria, {
-    //   as: 'idFuneraria',
-    //   constraints: false,
-    // });
+    models.cerimonia.belongsTo(models.funeraria, {
+      as: 'idFuneraria',
+      constraints: false,
+    });
 
     models.cerimonia.belongsTo(models.user, {
       as: 'responsavel',
