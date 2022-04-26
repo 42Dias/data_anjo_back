@@ -5,6 +5,7 @@ import SequelizeFilterUtils from '../utils/sequelizeFilterUtils';
 import Error404 from '../../errors/Error404';
 import Sequelize from 'sequelize';
 import { IRepositoryOptions } from './IRepositoryOptions';
+import funeraria from '../models/funeraria';
 
 const Op = Sequelize.Op;
 
@@ -26,6 +27,9 @@ class CerimoniaDataRepository {
       options,
     );
 
+    console.log("data.funerariaId")
+    console.log(data.funerariaId)
+
     const record = await options.database.cerimoniaData.create(
       {
         ...lodash.pick(data, [
@@ -36,6 +40,8 @@ class CerimoniaDataRepository {
         ]),
         cerimoniaId: data.cerimoniaId || null,
         tenantId:    data.tenantId    || tenant.id,
+        idFunerariaId: data.funerariaId ,
+        // idFuneraria: data.funerariaId ,
         createdById: currentUser.id ,
         updatedById: currentUser.id ,
       },
@@ -281,12 +287,12 @@ class CerimoniaDataRepository {
         });
       }
 
-      if (filter.nomeHomenageado) {
+      if (filter.nome) {
         whereAnd.push(
           SequelizeFilterUtils.ilikeIncludes(
             'cerimoniaData',
-            'nomeHomenageado',
-            filter.nomeHomenageado,
+            'nome',
+            filter.nome,
           ),
         );
       }
@@ -355,6 +361,15 @@ class CerimoniaDataRepository {
         whereAnd.push({
           ['cerimonia']: SequelizeFilterUtils.uuid(
             filter.cerimonia,
+          ),
+        });
+      }
+
+
+      if (filter.idFuneraria) {
+        whereAnd.push({
+          ['idFunerariaId']: SequelizeFilterUtils.uuid(
+            filter.idFuneraria,
           ),
         });
       }
