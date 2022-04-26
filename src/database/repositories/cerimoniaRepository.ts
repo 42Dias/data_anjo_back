@@ -352,6 +352,7 @@ class CerimoniaRepository {
       }
 
       if (filter.idFuneraria) {
+
         whereAnd.push({
           ['idFunerariaId']: SequelizeFilterUtils.uuid(
             filter.idFuneraria,
