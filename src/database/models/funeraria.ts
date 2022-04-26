@@ -78,6 +78,10 @@ export default function (sequelize) {
     });
 
     models.funeraria.belongsTo(models.user, {
+      as: 'user',
+    });
+
+    models.funeraria.belongsTo(models.user, {
       as: 'createdBy',
     });
 
