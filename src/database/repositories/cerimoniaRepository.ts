@@ -36,7 +36,7 @@ class CerimoniaRepository {
           'isEncerrada',
         ]),
         responsavelId: data.responsavelId || currentUser.id,
-        // idFunerariaId: data.idFuneraria || null,
+        idFunerariaId: data.idFuneraria || null,
         tenantId:    tenant.id      ,
         createdById: currentUser.id ,
         updatedById: currentUser.id ,

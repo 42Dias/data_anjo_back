@@ -38,6 +38,7 @@ class FunerariaRepository {
           "complemento",
         ]),
 
+        userId:      data.userId ,
         tenantId:    tenant.id ,
         createdById: currentUser.id ,
         updatedById: currentUser.id ,
@@ -272,6 +273,22 @@ class FunerariaRepository {
     });
 
     if (filter) {
+
+
+
+      if (filter.userId) {
+        whereAnd.push(
+          SequelizeFilterUtils.ilikeIncludes(
+            'funeraria',
+            'userId',
+            filter.userId,
+          ),
+        );
+      }
+
+
+
+
       if (filter.id) {
         whereAnd.push({
           ['id']: SequelizeFilterUtils.uuid(filter.id),
@@ -287,6 +304,7 @@ class FunerariaRepository {
           ),
         );
       }
+
 
       if (filter.createdAtRange) {
         const [start, end] = filter.createdAtRange;
